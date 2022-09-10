@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+  <head>
+    <title>그린재킷</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=1.0, user-scalable=yes"
+    />
+    <meta
+      name="format-detection"
+      content="telephone=no, address=no, email=no"
+    />
+    <meta name="HandheldFriendly" content="true" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/common2.css" />
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="js/pub.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/action/partner.js"></script>
+    <script
+      type="text/javascript"
+      src="https://developers.kakao.com/sdk/js/kakao.channel.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
+        navigator.userAgent
+      )
+        ? true
+        : false;
+      if (isMobile) {
+        location.href = "/m/html";
+      }
+
+      $(document).ready(function () {
+        $("#fullpage").fullpage({
+          //options here
+          autoScrolling: true,
+          scrollHorizontally: true,
+          anchors: ["1", "2", "3", "4", "5", "6", "7", "8"],
+          navigation: true,
+          navigationPosition: "right",
+          navigationTooltips: [
+            "서비스 소개",
+            "간편결제",
+            "우수캐디",
+            "골프투어",
+            "그린재킷 체크카드",
+            "그린재킷 앱",
+            "전국골프장",
+            "고객센터",
+          ],
+          afterLoad: function (origin, destination, direction) {
+            console.log("afterLoad", origin, destination, direction);
+          },
+          onLeave: function (origin, destination, direction) {
+            console.log("onLeave", destination);
+
+            var gnbIdx = 1;
+            var gnbSubIdx = destination.index;
+            if (destination.index == 0) {
+              highlightGnb(gnbIdx);
+              return;
+            } else if (destination.index == 6) {
+              gnbIdx = 2;
+              gnbSubIdx = 0;
+            } else if (destination.index == 7) {
+              gnbIdx = 4;
+              gnbSubIdx = 0;
+            } else {
+              gnbSubIdx -= 1;
+            }
+
+            highlightGnb(gnbIdx, gnbSubIdx);
+
+            if (destination.index == 8) {
+              $(".quick_menu").css("z-index", -1);
+              $(".goto_golf").css("z-index", -1);
+              $(".pg_scroll").css("z-index", -1);
+            } else {
+              $(".quick_menu").css("z-index", 10);
+              $(".goto_golf").css("z-index", 10);
+              $(".pg_scroll").css("z-index", 10);
+            }
+          },
+        });
+
+        _partner.main_list(function (data) {
+          console.log(data);
+          if (data && data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+              var partner = data[i];
+              var $partnerWrap = $("<div></div>");
+
+              var $cont_box1 = $('<div class="cont_box1"></div>');
+              var $cont_box1_ul = $("<ul></ul>");
+
+              var logoImgPath = "/images/logo_02.svg";
+              if (partner.PARTNER_THUMB) {
+                var thumbImgs = $.parseJSON(partner.PARTNER_LST_IMG);
+                logoImgPath = thumbImgs[0].path;
+              }
+              var $cont_box1_li_image = $(
+                '<li><img src="/resources' +
+                  logoImgPath +
+                  '" alt="' +
+                  partner.PARTNERNM +
+                  ' 썸네일 이미지" /></li>'
+              );
+              var $cont_box1_li_region = $(
+                "<li>" + partner.PARTNER_LOC_NM + "</li>"
+              );
+              var $cont_box1_li_nm = $("<li>" + partner.PARTNERNM + "</li>");
+
+              $cont_box1_ul.append($cont_box1_li_image);
+              $cont_box1_ul.append($cont_box1_li_region);
+              $cont_box1_ul.append($cont_box1_li_nm);
+              $cont_box1.append($cont_box1_ul);
+              $partnerWrap.append($cont_box1);
+
+              var $cont_box2 = $('<div class="cont_box2"></div>');
+              var $cont_box2_ul = $("<ul></ul>");
+              var listImgs = $.parseJSON(partner.PARTNER_LST_IMG);
+              var $cont_box2_li_image = $("<li></li>");
+              if (partner.SCHD_YN == "Y")
+                $cont_box2_li_image.append(
+                  '<div class="not_yet_cc2">제휴중</div>'
+                );
+              $cont_box2_li_image.append(
+                '<img src="/resources' +
+                  listImgs[0].path +
+                  '" alt="' +
+                  partner.PARTNERNM +
+                  ' 썸네일 이미지" />'
+              );
+
+              var $cont_box2_li_region = $(
+                "<li>" + partner.PARTNER_LOC_NM + "</li>"
+              );
+              var $cont_box2_li_nm = $("<li>" + partner.PARTNERNM + "</li>");
+
+              $cont_box2_ul.append($cont_box2_li_image);
+              $cont_box2_ul.append($cont_box2_li_region);
+              $cont_box2_ul.append($cont_box2_li_nm);
+              $cont_box2.append($cont_box2_ul);
+              $partnerWrap.append($cont_box2);
+
+              $("#alliance_slide_list").append($partnerWrap);
+            }
+
+            $(".alliance_slide").slick({
+              infinite: true,
+              variableWidth: true,
+              swipeToSlide: true,
+              centerMode: true,
+              //centerPadding: '0px',
+              //slidesToShow: 5,
+              //slidesToScroll: 1
+            });
+          }
+        });
+      });
+
+      function kakaochat() {
+        Kakao.Channel.chat({
+          channelPublicId: "_xaquYK",
+        });
+
+        // 		Kakao.Channel.createAddChannelButton({
+        // 		  	container: '#kakao_chat_wrap',
+        // 		  	channelPublicId: '_xcLqmC'
+        // 		});
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 상단 GNB -->
+      <header>
+        <a href="javascript:goMenu('index.html#1', 1);" class="logo"
+          ><img src="images/logo.png" alt="logo"
+        /></a>
+
+        <div class="gnb_menu">
+          <ul id="gnb_menu_list">
+            <li><a href="javascript:goMenu('brand.html', 0);">그린재킷</a></li>
+            <li class="on">
+              <a href="javascript:goMenu('index.html#1', 1);">서비스</a>
+            </li>
+            <li>
+              <a href="javascript:goMenu('index.html#7', 2);">전국골프장</a>
+            </li>
+            <li><a href="javascript:goMenu('event_02.html', 3);">소식</a></li>
+            <li>
+              <a href="javascript:goMenu('index.html#8', 4);">고객센터</a>
+            </li>
+          </ul>
+        </div>
+        <div class="gnb_menu_layer" style="display: none">
+          <ul id="gnb_sub_menu_list">
+            <li>
+              <p>
+                <a href="javascript:goMenu('brand.html', 0, 0);">브랜드 소개</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="javascript:goMenu('index.html#2', 1, 0);">간편결제</a>
+              </p>
+              <p>
+                <a href="javascript:goMenu('index.html#3', 1, 1);">우수캐디</a>
+              </p>
+              <p>
+                <a href="javascript:goMenu('index.html#4', 1, 2);">골프투어</a>
+              </p>
+              <p>
+                <a href="javascript:goMenu('index.html#5', 1, 3);"
+                  >그린재킷 체크카드</a
+                >
+              </p>
+              <p>
+                <a href="javascript:goMenu('index.html#6', 1, 4);"
+                  >그린재킷 앱</a
+                >
+              </p>
+            </li>
+            <li>
+              <!-- 					<p><a href="#none">지도로 보는 골프장</a></p> -->
+              <p>
+                <a href="javascript:goMenu('index.html#7', 2, 0);"
+                  >전국 골프장</a
+                >
+              </p>
+              <!-- 					<p><a href="#none">오픈예정 골프장</a></p> -->
+            </li>
+            <li>
+              <p>
+                <a href="javascript:goMenu('event_02.html', 3, 0);">이벤트</a>
+              </p>
+              <p>
+                <a href="javascript:goMenu('notice_01.html', 3, 1);"
+                  >공지사항</a
+                >
+              </p>
+            </li>
+            <li></li>
+          </ul>
+        </div>
+      </header>
+
+      <div id="fullpage" class="service">
+        <!-- 컨텐츠 영역 -->
+        <!-- 
+		<div class="event section section0">
+			<div class="inner">
+				<div class="stx">그린재킷 이벤트</div>
+				<h2><span>[이벤트]</span>KB국민 그린재킷 체크카드 출시,<br />쓸수록 혜택, 매월 최대 2만원 할인</h2>
+	
+				<div class="event_conts">
+					<div class="card_img_area"><img src="images/greenjacket_checkcard.png" alt="" /></div>
+					<ul>
+						<li class="tit">골프 & 라이프에 꼭 필요한 혜택만 담았습니다.</li>
+						<li>골프연습장, 골프용품 & 웨어, 골프여행, 주유, 보험 등 5% 할인과 해피포인트 5% 적립까지<br />THE즐거운 골프를 위한 다양한 혜택이 준비되어 있습니다.</li>
+						<li class="tx_btn">구글플레이/애플스토어에서 그린재킷 APP 다운 후, 왼쪽 하단 ‘카드신청’을 클릭하세요.</li>
+					</ul>
+					<div class="btns">
+						<a href="https://m.kbcard.com/CXHIACRC0002.cms?mainCC=b&allianceCode=09613&solicitorcode=7031251000" target="_blank"><span>KB국민 그린재킷 신청하기</span></a>
+					</div>
+				</div>
+			</div>			
+		</div>
+		-->
+        <div class="section section1">
+          <div class="inner">
+            <h2>그린재킷이 만드는<br />현금 없이 즐기는 골프문화</h2>
+            <h4>
+              모두가 즐겁고 편리한 스마트한 골프 세상<br />그린재킷이 대한민국
+              캐디와 함께 만들어 갑니다.
+            </h4>
+
+            <div class="info_area">
+              <dl>
+                <dt>편리한 골프</dt>
+                <dd>
+                  <ul>
+                    <li>캐디피 QR결제</li>
+                    <li>간편 지출증빙</li>
+                    <li>안전거래 약속</li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl>
+                <dt>함께하는 골프</dt>
+                <dd>
+                  <ul>
+                    <li>포인트 덤!</li>
+                    <li>우수캐디 서비스</li>
+                    <li>이벤트</li>
+                  </ul>
+                </dd>
+              </dl>
+              <dl>
+                <dt>즐거운 골프</dt>
+                <dd>
+                  <ul>
+                    <li>골프투어</li>
+                    <li>친구조인</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="msg">
+              <strong>그린재킷 앱</strong>을 다운로드 하시면
+              <strong>그린재킷의 특별한 서비스</strong>를 이용하실 수 있습니다
+            </div>
+          </div>
+        </div>
+
+        <div class="section section2">
+          <div class="inner">
+            <p class="stx">간편결제서비스</p>
+            <h2>지갑을 깜박해도<br />휴대폰만 있으면 걱정 N0!</h2>
+            <h4>
+              아직도 무겁게 지갑을 들고 다니세요?<br />대한민국 골퍼라면,
+              ‘그린재킷 APP’을 보여주세요.
+            </h4>
+
+            <div class="btns">
+              <button>QR 코드 촬영</button>
+              <button>모바일 지출 증명</button>
+            </div>
+
+            <div class="msg">
+              <strong>그린재킷 앱</strong>을 다운로드 하시면
+              <strong>그린재킷의 특별한 서비스</strong>를 이용하실 수 있습니다
+            </div>
+
+            <div class="qr_scan">
+              <div class="inbox">
+                <div class="qr_code"></div>
+                <div class="tx">
+                  라운드 후 캐디에게<br />그린재킷 QR코드 보여주기
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section section3">
+          <div class="inner">
+            <h2>대한민국 캐디는 프로입니다!<br />‘우수 캐디 서비스’</h2>
+            <h4>
+              캐디 서비스 향상을 위한 복지 지원과<br />대한민국 캐디의 더 나은
+              일하는 환경을 만들어 갑니다.
+            </h4>
+
+            <div class="info_area">
+              <dl>
+                <dt>
+                  <strong>그린재킷<br />체크카드</strong>
+                </dt>
+                <dd>골프 &amp; 라이프<br />할인과 적립까지<br />모두 담아</dd>
+              </dl>
+              <dl>
+                <dt>
+                  <strong>그린재킷<br />복지보험</strong>
+                </dt>
+                <dd>언제 어디서나<br />지켜주는 보험</dd>
+              </dl>
+              <dl>
+                <dt>
+                  <strong>우수캐디<br />이벤트</strong>
+                </dt>
+                <dd>그린재킷 앱에서<br />‘만족’ 꾹!<br />푸짐한 사은품</dd>
+              </dl>
+            </div>
+
+            <div class="msg">
+              <strong>그린재킷 앱</strong>을 다운로드 하시면
+              <strong>그린재킷의 특별한 서비스</strong>를 이용하실 수 있습니다
+            </div>
+          </div>
+        </div>
+        <div class="section section4">
+          <div class="inner">
+            <p class="stx">골프투어 서비스</p>
+            <h2>좋은 친구, 좋은 코스, 좋은 시간을 함께!</h2>
+            <h4>
+              대한민국 구석구석! 전 세계 방방곳곳! 그린재킷 투어와 함께 하세요!
+            </h4>
+            <a href="javascript:window.open('https://gjtour.co.kr/', '_blank');"
+              ><img src="images/btn_service4_01.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="section section5">
+          <div class="inner">
+            <p class="stx">Golf &amp; Life 제휴카드 서비스</p>
+            <h2>
+              다양한 <strong>골프</strong> 혜택을 담은<br />KB국민
+              <strong>그린재킷</strong> 체크카드
+            </h2>
+            <h4>
+              <strong>월 최대 2만원 할인 혜택 -</strong>
+              골프연습장, 스크린골프, 골프용품 &amp; 웨어, 연습장, 골프투어,
+              생활 속 보험,<br />주유할인과 함께 SPC 해피포인트 최대 5% 현장
+              적립까지<br />대한민국 골퍼라면 누리세요.
+              <div class="annual_fee">연회비 없음</div>
+            </h4>
+            <div class="k_card">
+              <a
+                href="https://card.kbcard.com/CXPRICAC0076.cms?mainCC=a&cooperationcode=09613&categoryCode=L0095&sGroupCode=2"
+                target="_blank"
+                >카드 신청하기</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="section section6">
+          <div class="inner">
+            <div class="top_btn_app">
+              <a
+                href="https://apps.apple.com/us/app/%EA%B7%B8%EB%A6%B0%EC%9E%AC%ED%82%B7/id1564846109"
+                target="_blank"
+                ><img src="images/btn_appstore_02.png" alt=""
+              /></a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.greenjacket"
+                target="_blank"
+                ><img src="images/btn_googleplay_02.png" alt=""
+              /></a>
+            </div>
+            <p class="stx">그린재킷 앱 서비스</p>
+            <h2>그린재킷<br />앱 사용</h2>
+            <h4>골프약속 가기 전,<br />그린재킷 앱 설치는 필수!</h4>
+            <div class="g_icon">
+              <img src="images/ico_service6_01.png" alt="" />
+            </div>
+
+            <div class="app_tip">
+              <ul>
+                <li>
+                  <div class="tip_area">
+                    <div class="tit">회원가입은 필수</div>
+                    <div class="tx1">
+                      그린재킷 앱을 다운 후<br />회원가입을 꼭 해주세요!
+                    </div>
+                    <div class="tx2">
+                      결제마다 적립되는 포인트!<br />할인 및 사은품 제공 등<br />다양한
+                      이벤트
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="tip_area">
+                    <div class="tit">오늘 서비스는?</div>
+                    <div class="tx1">
+                      앱 화면 하단 ‘QR결제’를 선택 후<br />서비스를 선택해
+                      주세요!
+                    </div>
+                    <div class="tx2">
+                      서비스 만족과 함께<br />추가봉사도 카드결제로~<br />포인트는
+                      덤!
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="tip_area">
+                    <div class="tit">결제/비밀번호</div>
+                    <div class="tx1">
+                      앱에 등록된 결제카드를 선택 후<br />비밀번호 6자리를
+                      눌러주세요!
+                    </div>
+                    <div class="tx2">
+                      법인/개인카드 모두 이용<br />현금없이 즐기는 골프
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="tip_area">
+                    <div class="tit">QR코드 보여주기</div>
+                    <div class="tx1">
+                      핸드폰에 생성된 QR코드를<br />캐디에게 보여 주세요!
+                    </div>
+                    <div class="tx2">
+                      이메일/카카오톡에서<br />영수증 확인이 가능
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="alliance section">
+          <div class="inner">
+            <h1>
+              <span>방방곳곳 대한민국 골프장</span>
+              여기서 캐디피 QR 결제 하세요!
+            </h1>
+
+            <div class="alliance_list">
+              <div id="alliance_slide_list" class="alliance_slide"></div>
+            </div>
+          </div>
+        </div>
+        <!-- 컨텐츠 영역 -->
+        <div class="customer section">
+          <div class="inner">
+            <h1>
+              <span>그린재킷 문의</span>
+              고객센터
+            </h1>
+
+            <div class="customer_info" id="kakao_chat_wrap">
+              <div class="customer_info_ask">
+                <a href="#" onclick="javascript:kakaochat();"
+                  ><strong><span>카톡</span> 상담하기</strong></a
+                >
+                <p>평일 오전 9:00 ~ 오후 5:00</p>
+              </div>
+              <!-- 
+					<div class="customer_info_counsel">
+						<a href="#none"><strong><span>1 : 1</span> 문의</strong></a>
+						<p>문의를 남겨주시면 최대한 빠르게<br />답변 드리겠습니다</p>
+					</div>
+					 -->
+            </div>
+
+            <div class="customer_info_txt">
+              <p>
+                &quot; 궁금하신 사항은 <strong>언제든지 문의</strong>해 주세요!
+                <span>그린재킷</span>이
+                <strong>성실히 답변</strong> 드리겠습니다! &quot;
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="section fp-auto-height">
+          <div class="footer">
+            <div class="inner">
+              <div class="logo">
+                <img src="images/footer_logo.png" alt="logo" />
+              </div>
+              <div class="terms">이용약관 <em></em> 개인정보취급방침</div>
+              <div class="adress">
+                <strong>(주)그린재킷</strong> 대표 : 임시아
+                <em></em> 사업자등록번호 : 228-81-04864 <em></em> 통신판매업신고
+                : 제 2019-충남천안-1498호<br />
+                충청남도 천안시 동남구 수신면 5산단6로 45 <em></em> 담당 :
+                정재승
+                <a href="mailto:greenjacket1@naver.com" target="_blank"
+                  >greenjacket1@naver.com</a
+                >
+              </div>
+              <div class="copyright">
+                Copyright GREEN JACKET. All right Reserved.
+              </div>
+
+              <div class="footer_rt">
+                <ul>
+                  <li>고객센터</li>
+                  <li>
+                    <a href="tel:02-564-1570" style="color: #8fc31f"
+                      >02.564.1570</a
+                    >
+                  </li>
+                  <li>
+                    관련사이트
+                    <strong
+                      style="cursor: pointer"
+                      onclick="window.open('https://gjtour.co.kr/', '_blank')"
+                      >그린재킷투어</strong
+                    >
+                  </li>
+                  <li
+                    style="cursor: pointer"
+                    onclick="window.open('https://gjtour.co.kr/', '_blank')"
+                  >
+                    www.gjtour.co.kr
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="goto_golf">
+        <a href="http://gjtour.co.kr" target="_blank"
+          ><span><strong>골프여행</strong> 바로가기</span></a
+        >
+      </div>
+
+      <div class="app_area">
+        <p>캐디피 , 그린재킷 QR코드로 간편하게!</p>
+        <div class="btn_app">
+          <a href="#none"><img src="images/btn_appstore_01.png" alt="" /></a>
+          <a href="#none"><img src="images/btn_googleplay_01.png" alt="" /></a>
+        </div>
+      </div>
+
+      <div class="pg_scroll">
+        <a href="#none"></a>
+      </div>
+
+      <div class="quick_menu">
+        <ul>
+          <li>
+            <a href="tel:02-564-1570"
+              ><img src="images/ico_quick_menu_01.png" alt=""
+            /></a>
+          </li>
+          <!-- 			<li><a href="#none"><img src="images/ico_quick_menu_02.png" alt="" /></a></li> -->
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+      if (!wcs_add) var wcs_add = {};
+      wcs_add["wa"] = "77c244dd0a6a28";
+      if (window.wcs) {
+        wcs_do();
+      }
+    </script>
+  </body>
+</html>
