@@ -1,0 +1,732 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>영어6</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5fe02828-4531-45ad-9d06-5fe930c51658" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/webb4.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">❤️</span></div><h1 class="page-title">영어6</h1><p class="page-description"></p></header><div class="page-body"><p id="d269659c-d6cd-4012-ade3-ebe6dae30f43" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">이러한 편견들은 특별히 널리<mark class="highlight-orange"> </mark><mark class="highlight-orange"><strong>퍼져</strong></mark> 있다. 
+These pr_______ are particularly<a href="https://www.learningforjustice.org/sites/default/files/styles/hero_images_non_homepage_l/public/2017-07/Teaching%20Tolerance_TT51_Extreme%20Prejudice_1800px.jpg?itok=TkWX3ybi"> </a><a href="https://www.learningforjustice.org/sites/default/files/styles/hero_images_non_homepage_l/public/2017-07/Teaching%20Tolerance_TT51_Extreme%20Prejudice_1800px.jpg?itok=TkWX3ybi"><mark class="highlight-red">pre____ </mark></a></summary><div class="indented"><p id="635fae9e-9710-42ac-a47a-5879ec498a8a" class=""><mark class="highlight-brown">prejudices, prevalent</mark></p><p id="265202db-7af3-432b-b5c8-e9dc00a65a24" class=""><mark class="highlight-blue">미국식 [ pərˈtɪkjələrli ]</mark></p><p id="d0fb22c7-74d5-4ae2-9aea-a1a8464e4e2d" class=""><mark class="highlight-blue"><strong>prevalent</strong></mark></p><p id="a016e45d-003e-4e3c-a93d-c082f274f336" class=""><mark class="highlight-blue">prejudice 미국∙영국 [ˈpredʒudɪs] ^프레주디스</mark></p><p id="b34ac8c4-54b7-40ce-b188-aa5830bd82fa" class=""><mark class="highlight-blue">prevalent 미국∙영국 [pr&#x27;evələnt]</mark></p><ul id="8eeb8f54-0061-4c7b-b726-2dce74a12460" class="toggle"><li><details open=""><summary>그는 서구 철학을 <mark class="highlight-orange">해체(해석)하기</mark>를 좋아한다. 
+He likes to <a href="https://cdn.dribbble.com/users/546004/screenshots/15323845/media/1105400f1fef1a2ce3361cdff3566549.jpg?compress=1&amp;resize=1600x1200&amp;vertical=top"><mark class="highlight-red"><strong>dec________</strong></mark></a><a href="https://cdn.dribbble.com/users/546004/screenshots/15323845/media/1105400f1fef1a2ce3361cdff3566549.jpg?compress=1&amp;resize=1600x1200&amp;vertical=top"><strong> </strong></a>western philosophy. </summary><p id="75d4741f-6906-48c5-b912-180e5ad91436" class=""><strong>deconstruct </strong></p></details></li></ul><ul id="e1e318a6-5bbe-4f29-b2dd-a242cb1a827c" class="toggle"><li><details open=""><summary>그는 신발을 신다가 <mark class="highlight-red"><strong>허리를 삐었다. 
+</strong></mark><strong>The man </strong><a href="https://images.everydayhealth.com/images/pain-management/back-pain/cs-threw-my-back-out-1440x810.jpg?w=1110"><mark class="highlight-red"><strong>p__ his back o__</strong></mark></a> when he was p_____ o__ his shoes. </summary><p id="1b332183-c8c3-41b4-9a4f-f3bb48daf6ba" class="">put, out, putting on</p></details></li></ul><ul id="cc80eb82-a9e8-4900-a04e-1323737b4f7e" class="toggle"><li><details open=""><summary>그 여자는 배와 함께 걷는데, <mark class="highlight-orange">내밀고</mark> 걷는다. 
+The woman walks with her belly<a href="https://www.shutterstock.com/ko/image-photo/beautiful-asian-young-woman-wearing-casual-1919009270"> </a><a href="https://www.shutterstock.com/ko/image-photo/beautiful-asian-young-woman-wearing-casual-1919009270"><mark class="highlight-red">st____ out</mark></a>. </summary><p id="c61d0f4a-6817-4e47-a7dc-6dc7d22e394f" class="">sticking </p></details></li></ul><ul id="ee64b3cc-7148-46fd-a2f4-ddb21b7db7ca" class="toggle"><li><details open=""><summary>다리를 꼬고 앉으세요. 
+sit w____ your legs<mark class="highlight-red"> </mark><a href="https://stylegirlfriend.com/wp-content/uploads/2021/04/dwyane-wade-legs-crossed.png"><mark class="highlight-red">c_____</mark></a><a href="https://stylegirlfriend.com/wp-content/uploads/2021/04/dwyane-wade-legs-crossed.png"> </a></summary><p id="16e29c00-34a0-4605-a2e9-96a562df556d" class="">with, crossed</p></details></li></ul><ul id="e4520c96-d89b-4a38-b70c-09cdbff9aae2" class="toggle"><li><details open=""><summary>다리를 벌리고 있는 사람들이 있다.  지하철에서. 
+There a__ people who <mark class="highlight-red">sit w_____  their legs </mark><a href="https://imgix.bustle.com/rehost/2016/9/13/6ec3a907-a209-44e4-923a-76f818ceb693.JPG?w=800&amp;fit=crop&amp;crop=faces&amp;auto=format%2Ccompress&amp;q=50&amp;dpr=2"><mark class="highlight-red">ap______</mark></a> on the subway. </summary><p id="85ea5b8e-427c-4ed7-ba1e-c9e33ec65bc8" class="">are, with, apart</p><p id="6d1c8475-8b6c-4058-a41c-11d889e2bf4f" class=""><a href="https://en.dict.naver.com/#/entry/enko/ece102fb2ad048e0bda9b5a68ad5e14b">apart</a></p><ul id="88ce4385-f3cb-4759-8d0b-6869594a664b" class="bulleted-list"><li style="list-style-type:disc">미국식 [əˈpɑːrt]</li></ul><ul id="a35a0af3-bd40-47b7-a52c-9b30227db589" class="bulleted-list"><li style="list-style-type:disc">1.<p id="f132d465-7e27-44e9-9c3f-ea9ff7c7d493" class="">부사 (거리·공간·시간상으로) 떨어져</p></li></ul><ul id="7f63cb24-1075-457b-9633-244ba0b36d6b" class="bulleted-list"><li style="list-style-type:disc">2.<p id="6d83ccfd-bfeb-47e3-9d02-301875664cc9" class="">부사 따로, 헤어져</p></li></ul><ul id="fe531b0d-1357-424a-9d57-a71fd63efb4e" class="bulleted-list"><li style="list-style-type:disc">3.<p id="8bfdcd0a-251b-4547-85f5-5d9ccec0d455" class="">부사 조각조각, 산산이</p></li></ul></details></li></ul><ul id="e180aaa8-c20f-4a60-97c0-a89b89553e19" class="toggle"><li><details open=""><summary>그의 모자는 흐물흐물해졌었다
+The hat had b______ <a href="https://i.etsystatic.com/6803656/r/il/bcc762/1737318049/il_1588xN.1737318049_5u05.jpg"><mark class="highlight-red">li___</mark></a></summary><p id="39211359-da30-43f0-9d41-ab04ae2b2fee" class="">become limp</p></details></li></ul><ul id="2cd95d9e-a26f-4ab3-a8d0-c865760992f6" class="toggle"><li><details open=""><summary>90도로 무릎을 구부려라 
+<a href="https://thebarefoodcompany.ie/wp/wp-content/uploads/2016/05/tbfc-lunges.jpeg"><mark class="highlight-red">b___ your k_____</mark></a> 90 degrees</summary><p id="ef97907f-dbf2-4e50-b83e-a81dcb6214c1" class="">bend, knees</p></details></li></ul><ul id="a98cbd53-473f-4024-ace7-6f78f93a3df7" class="toggle"><li><details open=""><summary>그의 정강이를 차다 
+k_____ him <a href="https://qph.fs.quoracdn.net/main-qimg-9d772cb600fc08094d7b292ab44754a0-lq"><mark class="highlight-red">i__ the sh___</mark></a></summary><p id="124dfc3a-c755-46fd-9bd8-e4587ba059da" class="">kick, in, shin</p></details></li></ul><ul id="eff2473b-8124-404a-badc-6c43868371f1" class="toggle"><li><details open=""><summary>종아리에 채찍질당했다</summary><p id="efd7cf70-d5ec-4b84-987b-7f5929464cfa" class="">I got whipped <a href="https://thumbs.dreamstime.com/z/beautiful-female-legs-red-stockings-black-whip-white-background-29714096.jpg"><mark class="highlight-red">on the calves</mark></a><mark class="highlight-red">
+</mark>종아리</p><p id="3e49941f-3189-4351-8b02-190ec7b82c96" class="">calf calves</p><p id="88024ca4-aef6-488d-bd44-6cd5fea6cb32" class="">미국식 [ kæf ]</p></details></li></ul><ul id="0062b6ac-a02f-4ded-b59c-5842e3de4887" class="toggle"><li><details open=""><summary>나는 침대 모서리에 정강이를 부딪혔다
+I<mark class="highlight-red"> b______ </mark><a href="https://i2.wp.com/8limbsus.com/wp-content/uploads/2013/01/Treating-shins-for-injury-bumps-and-bruises-swelling-Muay-Thai-Sylvie-w1200.jpg?w=475&amp;ssl=1"><mark class="highlight-red">my s_____</mark></a><a href="https://i2.wp.com/8limbsus.com/wp-content/uploads/2013/01/Treating-shins-for-injury-bumps-and-bruises-swelling-Muay-Thai-Sylvie-w1200.jpg?w=475&amp;ssl=1"> </a><mark class="highlight-teal">a_____ </mark>the c_____ of the bed</summary><p id="a94d369c-e7f4-48a5-a6c9-966e9def6cf3" class=""><mark class="highlight-red">bumped,shin, against, corner</mark></p></details></li></ul><ul id="29f5ca6a-da79-48ee-9aca-a888b4f8a37c" class="toggle"><li><details open=""><summary>그는 정강이가 까지게 했다
+He g__ his s____<mark class="highlight-red"> </mark><a href="https://pbs.twimg.com/media/ElRT1SaU8AEmWX9?format=jpg&amp;name=large"><mark class="highlight-red">sc______</mark></a></summary><p id="0712f46e-1c8d-4f73-a777-eadfdfb35979" class="">got, shin, <a href="https://pbs.twimg.com/media/ElRT1SaU8AEmWX9?format=jpg&amp;name=large"><mark class="highlight-red">scraped</mark></a></p></details></li></ul><ul id="5974863c-29da-4af8-9c71-cda38bb524ce" class="toggle"><li><details open=""><summary>음악계에 첫발을 내디뎠다. 
+He <mark class="highlight-red">t_____</mark> his<mark class="highlight-red"> first </mark><a href="https://www.thechangefactor.com/uploads/1/1/2/5/112574637/first-step_orig.jpg"><mark class="highlight-red">s____ i_____</mark></a> the music scene</summary><p id="71b94cca-e088-486f-8902-1612eae47b52" class="">took, step, into</p></details></li></ul><ul id="95c94731-078b-4648-ac16-3b05d81e9739" class="toggle"><li><details open=""><summary>그녀는 앞으로 몸을 숙였다
+She <a href="https://media.newyorker.com/photos/618ec1fbcdae2d45019d1cd1/master/w_2240,c_limit/211122_r39384.jpg"><mark class="highlight-red">l______  f______</mark></a></summary><p id="857e667f-d771-443a-a8a4-a75c39ae2b79" class=""><a href="https://media.newyorker.com/photos/618ec1fbcdae2d45019d1cd1/master/w_2240,c_limit/211122_r39384.jpg"><mark class="highlight-red">leaned forward</mark></a></p></details></li></ul><ul id="b6b8e9c6-0be0-4eef-a343-932c4ed6748a" class="toggle"><li><details open=""><summary>당신에게 배려를 보여주겠다. 배려하겠다
+<strong>I will </strong><mark class="highlight-red"><strong>s_____ you </strong></mark><a href="https://tbquk.files.wordpress.com/2012/06/lot-leaving-sodom.jpg"><mark class="highlight-red"><strong>con_______</strong></mark></a></summary><p id="2c7ad361-21b2-485f-ae3c-315c1cbf566f" class=""><strong>I will </strong><mark class="highlight-red"><strong>show you </strong></mark><a href="https://tbquk.files.wordpress.com/2012/06/lot-leaving-sodom.jpg"><mark class="highlight-red"><strong>consideration</strong></mark></a></p></details></li></ul><ul id="14cb91e8-ab92-4a80-b043-4b59f559f439" class="toggle"><li><details open=""><summary>자세를 똑바로 하라 
+<a href="https://i.ytimg.com/vi/5R54QoUbbow/maxresdefault.jpg"><mark class="highlight-red">s_________</mark></a> your p______</summary><p id="7a43ab18-322d-4c68-815a-fa57818c21d8" class=""><a href="https://i.ytimg.com/vi/5R54QoUbbow/maxresdefault.jpg"><mark class="highlight-red">straighten</mark></a> </p><p id="161231c3-89d4-44ee-8f03-f9f38941d7d3" class="">posture</p><p id="4df33404-834f-4aec-b01c-94b665e1fe07" class="">[|pɑːstʃə(r)]</p><p id="c517d492-4818-4b1a-adbc-facf3b0a93e5" class="">
+</p></details></li></ul><ul id="9a5d3853-9b59-4866-8f52-c0136489d4c9" class="toggle"><li><details open=""><summary>쭈그리고 앉다 
+<a href="https://t4.ftcdn.net/jpg/02/22/09/83/360_F_222098397_zBI4VXRfIFcR3LBpswcluTlnWENulXja.jpg">cr______ d</a>______</summary><p id="185b3fb5-0d23-46ac-a8bb-7db96839b042" class=""><a href="https://t4.ftcdn.net/jpg/02/22/09/83/360_F_222098397_zBI4VXRfIFcR3LBpswcluTlnWENulXja.jpg">crouch down</a></p></details></li></ul><ul id="e7a93ef4-6db2-4656-a468-47803b31e45b" class="toggle"><li><details open=""><summary>그 남자는 술을 많이 마셔서 비틀거렸다 
+The man <a href="http://storage.ff14.co.kr/article/2020/6/20/2020062018331812845.jpg"><mark class="highlight-red">st________</mark></a> because he d_____ a lot.</summary><p id="2ea2d200-c447-4938-adac-1e2a6dcd5bed" class="">The man <a href="http://storage.ff14.co.kr/article/2020/6/20/2020062018331812845.jpg"><mark class="highlight-red">staggered</mark></a> because he drank a lot.</p></details></li></ul><ul id="8d204634-c107-4e2a-ba9b-03dcb0750426" class="toggle"><li><details open=""><summary>(넌지시) 그가 정직하지 못하다고 암시하다. 
+<a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnv4bNyxAgb7ZQiOLgTB042GC91z1hVL-ErQ&amp;usqp=CAU"><mark class="highlight-yellow">ins_________</mark></a> that he is dis__________</summary><p id="abf6b303-0adc-4d39-b181-7d91913339b4" class=""><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnv4bNyxAgb7ZQiOLgTB042GC91z1hVL-ErQ&amp;usqp=CAU"><mark class="highlight-yellow">insinuate</mark></a> that he is dishonest</p></details></li></ul><ul id="6670b176-1e5c-401e-b8ee-975a46dbdb6e" class="toggle"><li><details open=""><summary>소비자들은 종종 가능한 한 지불을 미루려고 한다.
+Customers of_____ <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJOKyyGwNjuKD5YafK2VIY1dSZUa_ZvpdXhg&amp;usqp=CAU"><mark class="highlight-red">de____</mark></a><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJOKyyGwNjuKD5YafK2VIY1dSZUa_ZvpdXhg&amp;usqp=CAU"> pa_______ </a>for as l_____ as possible.</summary><p id="ce7a3f81-7d27-4877-9d19-fe733bb113b2" class="">Customers often defer payment for as long as possible.</p></details></li></ul><ul id="77d600c1-7451-472b-85a3-8bbe59209fb7" class="toggle"><li><details open=""><summary>Paul은 평범한 삶에서 탈출하고 싶다.
+Paul wants to es_____ from his <a href="https://randomblatherdotcom.files.wordpress.com/2020/03/11644.mundane.jpg"><mark class="highlight-red">m_______</mark></a> life.</summary><p id="fd0623ef-24d7-42b4-b1e9-637d8623281b" class="">Paul wants to escape from his <a href="https://randomblatherdotcom.files.wordpress.com/2020/03/11644.mundane.jpg"><mark class="highlight-red">mundane</mark></a> life.</p></details></li></ul><ul id="31e8166b-a596-4f44-a306-61121f70d199" class="toggle"><li><details open=""><summary>넌 스포츠카에 대해 자랑하지 말아야 해. 
+You shouldn&#x27;t <a href="https://i0.wp.com/www.finimize.com/wp/wp-content/uploads/2020/08/11082020-xpeng.jpg?resize=650,400"><mark class="highlight-red">br____ </mark></a><mark class="highlight-red">a_____</mark> your sports car.</summary><p id="84b9cc9e-458c-4296-87db-f6eb6b5309ed" class="">You shouldn&#x27;t <a href="https://i0.wp.com/www.finimize.com/wp/wp-content/uploads/2020/08/11082020-xpeng.jpg?resize=650,400"><mark class="highlight-red">brag </mark></a><mark class="highlight-red">about</mark> your sports car.</p></details></li></ul><ul id="cc9965d4-e3e4-405c-a357-608522be73d0" class="toggle"><li><details open=""><summary>후보자를 위해 홍보하다
+They <a href="https://www.ulsanpress.net/news/photo/202202/393267_175466_813.jpg"><mark class="highlight-red">ca______</mark></a> for a can_____</summary><p id="a99ee3b6-c33c-4184-9e30-c88a2d12dfe6" class="">They <a href="https://www.ulsanpress.net/news/photo/202202/393267_175466_813.jpg"><mark class="highlight-red">canvass</mark></a> for a candidate</p></details></li></ul><ul id="1a66e9b5-c0ee-4cc4-830d-48196b707a13" class="toggle"><li><details open=""><summary>전도유망한 변호사
+a <mark class="highlight-red">pr________</mark> <a href="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202201/27/bf5645c9-9ad1-4784-9dda-3181aac7cd81.jpg">lawyer</a>.</summary><p id="40e47af0-abac-4864-a95f-1f8548d2b3e2" class="">a <mark class="highlight-red">prospective</mark> <a href="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202201/27/bf5645c9-9ad1-4784-9dda-3181aac7cd81.jpg">lawyer</a>.</p></details></li></ul><ul id="113049d7-d263-4aea-8d5d-0bd117433a0e" class="toggle"><li><details open=""><summary>지혜는 나이를 초월한다
+Wisdom <a href="https://c8.alamy.com/comp/DDRMFK/athletics-world-championship-in-donostia-euskadi-spain-DDRMFK.jpg"><mark class="highlight-red">tr_________</mark></a> a__.</summary><p id="20bd2a83-706d-4b47-b088-451cda5bcb54" class="">Wisdom <a href="https://c8.alamy.com/comp/DDRMFK/athletics-world-championship-in-donostia-euskadi-spain-DDRMFK.jpg"><mark class="highlight-red">transcend</mark></a> age.</p></details></li></ul><ul id="5b5216a3-da87-4604-860f-b1f078ad0a3e" class="toggle"><li><details open=""><summary>수익성 높은 사업
+a <a href="https://fdinews.info/wp-content/uploads/2020/04/10-lucrative-business-ideas-in-Sri-Lanka-to-start-in-2020-1.png"><mark class="highlight-red">lu______</mark></a> business.</summary><p id="4a4dd37c-eb4e-4539-89ec-12d2b7f027da" class="">a <a href="https://fdinews.info/wp-content/uploads/2020/04/10-lucrative-business-ideas-in-Sri-Lanka-to-start-in-2020-1.png"><mark class="highlight-red">lucrative</mark></a> business.</p><p id="7458095e-0cc9-4cb6-af9d-6b584410d7c2" class="">ˈluːkrətɪv</p></details></li></ul><ul id="2448168b-e8da-4d90-a654-a6a9a3444833" class="toggle"><li><details open=""><summary>30만 유로의 갑작스러운 횡재
+a sudden <a href="https://image.cnbcfm.com/api/v1/image/101380776-83520730.jpg?v=1532564542&amp;w=929&amp;h=523"><mark class="highlight-red">wi_____</mark></a> o_ ￡300,000</summary><p id="3ae8a5c9-734b-472d-8f84-9c82606c48e9" class="">a sudden <a href="https://image.cnbcfm.com/api/v1/image/101380776-83520730.jpg?v=1532564542&amp;w=929&amp;h=523"><mark class="highlight-red">windfall</mark></a> of ￡300,000</p></details></li></ul><ul id="efccac21-e8ac-4104-a31d-61335e5ef003" class="toggle"><li><details open=""><summary>꼼꼼한 계획
+<a href="https://www.gamespot.com/a/uploads/scale_super/123/1239113/2991708-bauer1.jpg"><mark class="highlight-red"><strong>me_______</strong></mark></a><strong> planning</strong></summary><p id="495c3188-f0f0-45c9-9a10-b842d0ce345c" class=""><a href="https://www.gamespot.com/a/uploads/scale_super/123/1239113/2991708-bauer1.jpg"><mark class="highlight-red"><strong>meticulous</strong></mark></a><strong> planning</strong></p><p id="924cd412-f05b-49c9-9010-9e3bc949f94c" class="">məˈtɪkjələs</p></details></li></ul><ul id="843bc75e-e062-401d-bccf-05a97ed3853f" class="toggle"><li><details open=""><summary>모자를 거꾸로 쓰다
+wear a cap <a href="http://cdn.shopify.com/s/files/1/2523/4438/articles/Depositphotos_202259510_L_1200x1200.jpg?v=1640634859"><mark class="highlight-red">ba_______</mark></a></summary><p id="75214368-0696-4675-b6d9-adb202c332b7" class="">wear a cap <a href="http://cdn.shopify.com/s/files/1/2523/4438/articles/Depositphotos_202259510_L_1200x1200.jpg?v=1640634859"><mark class="highlight-red">backwards</mark></a></p></details></li></ul><ul id="cdffd28f-db2c-476b-b103-bb3b103ac7a9" class="toggle"><li><details open=""><summary>옷을 껴입었다. 오늘.(추워서)
+I<a href="https://www.vmcdn.ca/f/files/via/rss/glacier/2020/03/cold-weather.jpg"> </a><a href="https://www.vmcdn.ca/f/files/via/rss/glacier/2020/03/cold-weather.jpg"><mark class="highlight-red">b_______ </mark></a><mark class="highlight-red"> __ </mark>today</summary><p id="80bc718d-f823-4031-a952-3a7e597d453a" class="">I<a href="https://www.vmcdn.ca/f/files/via/rss/glacier/2020/03/cold-weather.jpg"> </a><a href="https://www.vmcdn.ca/f/files/via/rss/glacier/2020/03/cold-weather.jpg"><mark class="highlight-red">bundled up</mark></a><mark class="highlight-red"> </mark>today</p></details></li></ul><ul id="28abd9c6-008d-4341-8ef0-9ff8f1cb6300" class="toggle"><li><details open=""><summary>내 가방좀 가져다 주겠니?
+Could you <a href="https://cdn11.bigcommerce.com/s-bzhmoihl/images/stencil/1280x1280/products/230/1487/Jobee-SD__77648.1654011295.jpg?c=2?imbypass=on"><mark class="highlight-red">fe____</mark></a><a href="https://cdn11.bigcommerce.com/s-bzhmoihl/images/stencil/1280x1280/products/230/1487/Jobee-SD__77648.1654011295.jpg?c=2?imbypass=on"> </a>me my bag?</summary><p id="430bae91-5b66-4eec-84b4-a3867613532a" class="">Could you <a href="https://cdn11.bigcommerce.com/s-bzhmoihl/images/stencil/1280x1280/products/230/1487/Jobee-SD__77648.1654011295.jpg?c=2?imbypass=on"><mark class="highlight-red">fetch</mark></a><a href="https://cdn11.bigcommerce.com/s-bzhmoihl/images/stencil/1280x1280/products/230/1487/Jobee-SD__77648.1654011295.jpg?c=2?imbypass=on"> </a>me my bag?</p></details></li></ul><ul id="9535a0a9-5ad4-480e-b4fe-e0bc8ca0b530" class="toggle"><li><details open=""><summary>그를 강등시키다 
+<a href="https://peninsulacanada.com/wp-content/uploads/2020/01/demotion.jpeg"><mark class="highlight-red">de_____</mark></a> him</summary><p id="5b2c335f-78fa-4c19-b34b-24bea201403f" class=""><a href="https://peninsulacanada.com/wp-content/uploads/2020/01/demotion.jpeg"><mark class="highlight-red">demote</mark></a> him</p></details></li></ul><ul id="b9f54983-b8d5-4dfb-a23f-cda3418ef9b5" class="toggle"><li><details open=""><summary>암호를 해독하다
+<a href="https://media-cdn.tripadvisor.com/media/photo-s/01/71/b8/cc/trying-to-decipher-the.jpg"><mark class="highlight-red">de</mark></a><mark class="highlight-red">_____</mark> a code</summary><p id="0833a6dc-6c4d-484d-b6ed-36c7edef78db" class=""><a href="https://media-cdn.tripadvisor.com/media/photo-s/01/71/b8/cc/trying-to-decipher-the.jpg"><mark class="highlight-red">decipher</mark></a> a code</p><p id="d673c22d-6d13-4656-8e46-d5507153a75d" class="">[dɪˈsaɪfə(r)]</p><p id="6eda437f-6a5c-4577-aa84-c772f7a1a37b" class="">
+</p></details></li></ul><ul id="89b70801-ba42-499d-91b1-e61b99d5b4e5" class="toggle"><li><details open=""><summary>판에 박은 듯이 되다
+g__[fa__] in___ a <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjSgjXdIQmKMNfWd5EeNagqEaflQ24aEepoA&amp;usqp=CAU"><mark class="highlight-red">groove</mark></a></summary><p id="527122b4-c84c-4da1-b108-0214552b520b" class="">get[fall] into a groove</p><p id="a5a4e4b0-9e73-4fc9-93d8-10e752050825" class="">판에 박은 듯이 되다, 버릇이 되다, 천편일률적으로 되다.</p></details></li></ul><ul id="c1e9d05d-666f-4b1b-b445-ab09011fdb18" class="toggle"><li><details open=""><summary>그 자전거는 도랑에 거꾸로 처박혀 있었다.
+The bicycle l__ up______ in a di___</summary><p id="37a7d746-1eb9-4a86-95c6-a79e44e0600e" class="">The bicycle lay upended in a ditch.</p></details></li></ul><ul id="54c8313d-d731-4b80-bf2e-e16fb1901c82" class="toggle"><li><details open=""><summary>일본을 뒤집어 엎다</summary><p id="0c4bca04-18b5-47bd-9f5f-bc230a92b488" class="">upend Japan</p></details></li></ul><ul id="c88df348-fa1d-4e41-a964-a98ca779bd47" class="toggle"><li><details open=""><summary>고랑
+fu_____</summary><p id="9967f244-29ea-4fbe-bdf1-4ea9866b2ce5" class="">ˈfɜːroʊ. <a href="https://image.shutterstock.com/image-photo/seed-sowing-furrows-field-260nw-1929739118.jpg"><mark class="highlight-red">furrow</mark></a></p></details></li></ul><ul id="51f4c25a-f0e5-4eb4-8be3-01b007c0aa9d" class="toggle"><li><details open=""><summary>상황을 눈치채다. 
+<a href="https://www.espressoenglish.net/wp-content/uploads/2020/09/listening-3079065_640-300x200.jpg"><mark class="highlight-red">g___ w____ o</mark></a><mark class="highlight-red">__</mark> what is going on</summary><p id="069c5e7c-d960-4f18-a085-7b05edb7328d" class="">get wind of</p></details></li></ul><ul id="28f52ce4-715a-43b3-9e83-5b963191410b" class="toggle"><li><details open=""><summary>꽃무늬 벽지  
+wallpaper with a <a href="https://wallpaperaccess.com/full/25084.jpg">fl____ </a><a href="https://wallpaperaccess.com/full/25084.jpg"><mark class="highlight-red"><strong>m____</strong></mark></a></summary><p id="f3c4c196-2d49-4130-a19e-2219b122444e" class="">wallpaper with a <a href="https://wallpaperaccess.com/full/25084.jpg">flower </a><a href="https://wallpaperaccess.com/full/25084.jpg"><mark class="highlight-red"><strong>motif</strong></mark></a></p><p id="cdaeb976-c6c1-442a-a8f6-2dbac20ae511" class="">[ moʊ|tiːf ]</p></details></li></ul><ul id="41e638d3-05cf-4112-a931-b6823892055d" class="toggle"><li><details open=""><summary>그 헛간으로 되돌아 가자.
+Let&#x27;s <a href="https://riffmagazine.com/wp-content/uploads/2021/12/81rVF22WhqL._SL1500_-1-660x366.jpg"><mark class="highlight-red">he__ ba___</mark></a><mark class="highlight-red"> to</mark> the b___</summary><p id="7abb0422-856f-4045-9656-6effdb0db6be" class="">Let&#x27;s <a href="https://riffmagazine.com/wp-content/uploads/2021/12/81rVF22WhqL._SL1500_-1-660x366.jpg"><mark class="highlight-red">head back</mark></a><mark class="highlight-red"> to</mark> the barn.</p></details></li></ul><ul id="bece6348-947e-4613-bedf-2e84d30c23bf" class="toggle"><li><details open=""><summary>그는 곧 회복할 것이다.(병에서)
+He will s____ <a href="https://merriam-webster.com/assets/ld/word_of_the_day/images/3053/large.jpg"><mark class="highlight-red">rec______</mark></a></summary><p id="43938705-21d8-49e6-8e69-37586f7483b4" class="">He will soon <a href="https://merriam-webster.com/assets/ld/word_of_the_day/images/3053/large.jpg"><mark class="highlight-red">recuperate</mark></a></p></details></li></ul><ul id="9d55782a-2883-4560-b723-3a0640481e0b" class="toggle"><li><details open=""><summary>터무니 없는 통계적 속임수
+<mark class="highlight-orange_background"><a href="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2010/11/17/0/Outrageous-Food_Tom-Pizzica-Feature-5_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371595603388.jpeg">outr______</a></mark><mark class="highlight-orange_background"> </mark>sta______ tri_____</summary><p id="5115d02f-dbfb-44da-8f63-7b99f61497e5" class=""><mark class="highlight-orange_background"><a href="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2010/11/17/0/Outrageous-Food_Tom-Pizzica-Feature-5_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371595603388.jpeg">outrageous</a></mark><mark class="highlight-orange_background"> </mark>statistical trickery</p><p id="971fcab6-bf4e-451a-9412-b164bbc3bf33" class="">터무니 없는 통계적 속임수</p></details></li></ul><ul id="b3a5b25e-e6df-410e-8b66-e0e82758f530" class="toggle"><li><details open=""><summary>참신함 
+<a href="http://cdn.cnn.com/cnnnext/dam/assets/191022165248-longaberger-basket-company-building.jpg"><mark class="highlight-red">nov____</mark></a></summary><p id="193e0730-acbb-44d3-bab8-9959154b5129" class=""><a href="http://cdn.cnn.com/cnnnext/dam/assets/191022165248-longaberger-basket-company-building.jpg"><mark class="highlight-red">novelty</mark></a></p><p id="a5ff32b7-5fac-4319-8683-04d5c8974b3d" class="">[│nɑːvlti]</p></details></li></ul><ul id="52821467-e7ce-497d-b6a7-8e51840af5c9" class="toggle"><li><details open=""><summary>두 사건 사이에서 유사점을 이끌어내다.
+dr___ an <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5OETXVAgdbc7aEsvalUyDvqHNzj6YPVbDgw&amp;usqp=CAU"><mark class="highlight-red">an_____</mark></a> between two events</summary><p id="1eb25980-04e3-423e-96f5-5eea0031477f" class="">draw an <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5OETXVAgdbc7aEsvalUyDvqHNzj6YPVbDgw&amp;usqp=CAU"><mark class="highlight-red">analogy</mark></a> between two events</p><p id="f188e858-07b3-4779-b876-ce0ca8a681c4" class="">[ əˈnælədʒi ]</p><p id="21361acd-a181-4845-9bda-72896b2b6faa" class="">유사성, 유추, 비유</p></details></li></ul><ul id="692e1351-f35f-47fc-a3bb-a8abe9db3bb1" class="toggle"><li><details open=""><summary>사람 목을 자르다
+<a href="https://image.shutterstock.com/image-vector/perseus-sculpture-holding-decapitated-head-260nw-1697705296.jpg"><mark class="highlight-red">dec______</mark></a> a man</summary><p id="938a2ddf-91ba-4167-9c32-6bf9dfb00b9f" class=""><a href="https://image.shutterstock.com/image-vector/perseus-sculpture-holding-decapitated-head-260nw-1697705296.jpg"><mark class="highlight-red">decapitate</mark></a> a man</p><p id="1339fa8f-3d50-4854-b22b-c800d669ba44" class="">[dɪˈkæpɪteɪt]</p><p id="12beae9a-93a8-4be9-80be-3302ea092e1c" class="">
+</p></details></li></ul><ul id="82d86a1e-12f4-46e3-b913-8a67bc6d6fe8" class="toggle"><li><details open=""><summary>공공 질서를 어지럽히지 마라.
+Do not <a href="https://images.hdqwalls.com/download/joker-police-car-mm-1280x2120.jpg"><mark class="highlight-red">de_____</mark></a> the pu___ or___.</summary><p id="0fc90e4f-3a29-4e64-aa96-5f92ce14deb7" class="">Do not <a href="https://images.hdqwalls.com/download/joker-police-car-mm-1280x2120.jpg"><mark class="highlight-red">derange</mark></a> the public order.</p><p id="6e0158b4-d3a9-4184-a8ec-2b54d04628bc" class="">미국∙영국 [diréindƷ] </p><p id="ac64f7a6-3716-4734-9ec3-0a64940089b2" class="">공공 질서를 어지럽히지 마라.</p></details></li></ul><ul id="94367254-cb00-421b-9b41-fc92aebf8bd5" class="toggle"><li><details open=""><summary>그의 화풍은 피카소를 연상시킨다
+His style is <a href="https://images.theconversation.com/files/468137/original/file-20220610-25216-fwa0vz.jpg?ixlib=rb-1.1.0&amp;rect=0%2C0%2C2995%2C1495&amp;q=45&amp;auto=format&amp;w=1356&amp;h=668&amp;fit=crop"><mark class="highlight-red">re_________</mark></a> __ Picasso’s</summary><p id="6d8eac30-9339-4bfb-963c-2b99fd0d46ab" class="">His style is <a href="https://images.theconversation.com/files/468137/original/file-20220610-25216-fwa0vz.jpg?ixlib=rb-1.1.0&amp;rect=0%2C0%2C2995%2C1495&amp;q=45&amp;auto=format&amp;w=1356&amp;h=668&amp;fit=crop"><mark class="highlight-red">reminiscent</mark></a> of Picasso’s</p><p id="28bce6e2-7a02-4479-bfb0-b1d98b7781f1" class="">[ˌremɪˈnɪsnt]</p></details></li></ul><ul id="9adb1880-7800-430a-83f3-8acd2e120544" class="toggle"><li><details open=""><summary>고등어 
+<a href="https://i0.wp.com/delicerecipes.com/wp-content/uploads/2020/06/bakes-mackerel-fillets-recipe-scaled.jpg?resize=1170%2C1463&amp;ssl=1">m</a>______</summary><p id="5d157f78-dcc4-4d82-99a5-e93415ffef5d" class=""><a href="https://i0.wp.com/delicerecipes.com/wp-content/uploads/2020/06/bakes-mackerel-fillets-recipe-scaled.jpg?resize=1170%2C1463&amp;ssl=1">mackerel</a></p><p id="7c0641f7-5a1c-4af5-a5cc-47e79180b47c" class="">[ˈmækrəl]</p></details></li></ul><ul id="20906551-4bb4-4b98-9f69-9d4bc1504ba2" class="toggle"><li><details open=""><summary>감자 다 잘게 썰었죠?
+Did you <a href="https://img-aws.ehowcdn.com/750x500/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/54eb574853124502a812573aa69c64cc"><mark class="highlight-red">sh____</mark></a> the potato?</summary><p id="b1246d51-9fad-40ee-a322-8baf689872e1" class="">Did you <a href="https://img-aws.ehowcdn.com/750x500/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/54eb574853124502a812573aa69c64cc"><mark class="highlight-red">shred</mark></a> the potato?</p></details></li></ul><ul id="ff68d9aa-1055-437d-90da-f44405f49892" class="toggle"><li><details open=""><summary>증거라고는 단 하나도 없었다
+There was not a <a href="https://sojo.net/sites/default/files/styles/large_rectangle_crop/public/blog/thumbRNS-SOLITARY-PROTEST051315c-1.jpg?itok=X8-xCC0a">s______y </a><a href="https://ak.picdn.net/shutterstock/videos/11663225/thumb/1.jpg"><mark class="highlight-red">sh____</mark></a> o_ evidence.</summary><p id="9ffe0447-29d9-48e0-b79a-ce927d9cc823" class=""> <a href="https://sojo.net/sites/default/files/styles/large_rectangle_crop/public/blog/thumbRNS-SOLITARY-PROTEST051315c-1.jpg?itok=X8-xCC0a">solitary </a><a href="https://ak.picdn.net/shutterstock/videos/11663225/thumb/1.jpg"><mark class="highlight-red">shred</mark></a> of</p><p id="a911cc4e-d3e2-4e9f-ab9a-5e62bf37fa85" class="">증거라고는 단 하나도 없었다.</p></details></li></ul><ul id="8be9e06a-c1d4-4aff-90e5-fbcd5fc6bbb9" class="toggle"><li><details open=""><summary>넌 체면도 없니?
+<strong>Have you no s_____  __ </strong><a href="https://www.dsogaming.com/wp-content/uploads/2022/01/God-of-War-Screenshot-2022.01.14-14.35.36.35.jpg"><mark class="highlight-red"><strong>d________</strong></mark></a><strong>?</strong></summary><p id="6b971562-2043-4f24-9c39-ac897bbf8acf" class="">sense of decency</p><p id="3ac05a4e-0a3c-455e-8926-f79b76a7935f" class="">넌 체면도 없니?</p><p id="b5ce2eb3-65bb-4498-bd2d-09724bd3124d" class="">ˈdiːsnsi</p></details></li></ul><ul id="92bf5bd8-544b-4f40-a74b-c24bd2d99265" class="toggle"><li><details open=""><summary>투명한 정직성을 지닌 남자
+<strong>a man of </strong><a href="https://blogs.3ds.com/delmia/wp-content/uploads/sites/24/2018/05/frozen-bubble-1943224_1920.jpg"><mark class="highlight-red"><strong>t__________</strong></mark></a><strong> h______</strong></summary><p id="4b66b66a-2acc-4178-8474-a6ea12bae83c" class=""><a href="https://blogs.3ds.com/delmia/wp-content/uploads/sites/24/2018/05/frozen-bubble-1943224_1920.jpg"><mark class="highlight-red"><strong>transparent</strong></mark></a><strong>  honesty</strong></p></details></li></ul><ul id="70374f8b-b12c-4806-9a5d-21fa1908a825" class="toggle"><li><details open=""><summary>만두를 만들기 위해 고기를 다졌다 
+I <a href="https://cdn.shopify.com/s/files/1/2808/1390/products/minced_steak_beef_887x589.jpg?v=1526237979"><mark class="highlight-red">m_____</mark></a><mark class="highlight-red"> </mark>the m____ to make d_______s.</summary><p id="091f6b2e-77b3-49e9-a01a-7be65d122c18" class=""><a href="https://cdn.shopify.com/s/files/1/2808/1390/products/minced_steak_beef_887x589.jpg?v=1526237979"><mark class="highlight-red">minced</mark></a><mark class="highlight-red"> , </mark>meat, dumplings</p><p id="551dc873-fa46-4cf1-8b09-4887dfaaa3ed" class="">[ˈmɪns] </p><p id="520b8359-e86a-447c-a6da-0b73dc2201ab" class="">만두를 만들기 위해 고기를 다졌다</p></details></li></ul><ul id="aaaf2db9-ef1c-4df1-a3a3-dcc83f7a83c4" class="toggle"><li><details open=""><summary>한국인들은 갈비를 양념에 재워 뒀다가 요리한다
+Koreans <a href="https://www.tastesoflizzyt.com/wp-content/uploads/2021/06/pork-rib-marinade-1.jpg"><mark class="highlight-red">m_______</mark></a> ribs before c______g them</summary><p id="b88da415-0dc9-4c2b-88d8-f17a97851b04" class=""><a href="https://www.tastesoflizzyt.com/wp-content/uploads/2021/06/pork-rib-marinade-1.jpg"><mark class="highlight-red">marinate</mark></a> , cooking </p></details></li></ul><ul id="9760617c-3b13-410c-860b-b6f20a620610" class="toggle"><li><details open=""><summary>조리사들이 직원들에게 국자에 국을 떠 주고 있다.
+Cooks are <a href="https://secure.img1-fg.wfcdn.com/im/42014614/resize-h500-w750%5Ecompr-r85/4479/44794956/default_name.jpg"><mark class="highlight-red">la______</mark></a><mark class="highlight-red"> </mark>s_____ for the employees.</summary><p id="8a55eb38-0ac6-43ad-aec4-9eedcc7f570d" class=""><a href="https://secure.img1-fg.wfcdn.com/im/42014614/resize-h500-w750%5Ecompr-r85/4479/44794956/default_name.jpg"><mark class="highlight-red">ladling</mark></a><mark class="highlight-red"> , </mark>soup</p><p id="6b55b503-46eb-4d0b-ba83-0de975b37e04" class="">[ˈleɪdl]</p><p id="355b95a2-2944-47f6-9ec4-70662b63dc19" class="">조리사들이 직원들에게 국자에 국을 떠 주고 있다.</p></details></li></ul><p id="372986a1-45c9-4df3-a31b-79df12f2652d" class="">
+</p></div></details></div></article></body></html>
